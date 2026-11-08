@@ -1,15 +1,19 @@
+from data.file_reader import read_file
+from business.search_service import find_paths
 
-from business.validator import validate_path
 
+file_path = "data/example.txt"
 
-paths = [
-    r"C:\Users\Diana\Documents\report.txt",
-    r"D:\Projects\Python\main.py",
-    r"\\Server\Shared\file.docx",
-    r"Documents\file.txt",
-    r"C:\Folder\fi*le.txt",
-    r"C:\Folder.\file.txt"
-]
+text = read_file(file_path)
 
-for path in paths:
-    print(f"{path} -> {validate_path(path)}")
+if text:
+    print("Содержимое файла:")
+    print(text)
+
+    found_paths = find_paths(text)
+
+    print("Найденные пути:")
+    for path in found_paths:
+        print(path)
+
+    print(f"\nВсего найдено: {len(found_paths)}")

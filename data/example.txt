@@ -1,0 +1,2 @@
+Мой проект находится в C:\Users\Diana\Projects\Python.
+Документ расположен в D:\Documents\report.txt.
